@@ -81,4 +81,8 @@ if st.button("Predict", use_container_width=True):
   prediction = model.predict(input_data)[0]
   if prediction == 1:
     st.error("Prediction: Heart Disease")
-  else: st.success("Prediction: Normal") # Show probability if the Random Forest supports it if hasattr(model, "predict_proba"): probabilities = model.predict_proba(input_data)[0] st.write( f"Probability of Heart Disease: {probabilities[1] * 100:.2f}%" ) st.write( f"Probability of Normal: {probabilities[0] * 100:.2f}%" )
+  else: st.success("Prediction: Normal") # Show probability if the Random Forest supports it 
+if hasattr(model, "predict_proba"): 
+    probabilities = model.predict_proba(input_data)[0] 
+    st.write( f"Probability of Heart Disease: {probabilities[1] * 100:.2f}%" ) 
+    st.write( f"Probability of Normal: {probabilities[0] * 100:.2f}%" )
