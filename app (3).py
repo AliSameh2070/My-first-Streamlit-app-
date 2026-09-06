@@ -145,7 +145,7 @@ if st.button("Predict", use_container_width=True):
     ]
 )
 
-prediction = model.predict(input_data)[0]
+    prediction = model.predict(input_data)[0]
 
 if prediction == 1:
     st.error("Prediction: Heart Disease")
