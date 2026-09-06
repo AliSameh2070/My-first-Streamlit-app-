@@ -153,14 +153,14 @@ if st.button("Predict", use_container_width=True):
         st.success("Prediction: Normal")
 
 # Prediction probabilities
-if hasattr(model, "predict_proba"):
+    if hasattr(model, "predict_proba"):
 
-    probabilities = model.predict_proba(input_data)[0]
+        probabilities = model.predict_proba(input_data)[0]
 
-    st.write(
-        f"Probability of Heart Disease: "
-        f"{probabilities[1] * 100:.2f}%"
-    )
+        st.write(
+            f"Probability of Heart Disease: "
+            f"{probabilities[1] * 100:.2f}%"
+        )
 
     st.write(
         f"Probability of Normal: "
